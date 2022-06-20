@@ -1,4 +1,5 @@
 import React from 'react';
+import ToDoItem from './ToDoItem';
 
 function Item() {
 
@@ -29,7 +30,10 @@ function Item() {
             <button type="submit" >Add</button>
         </form>
         <ul>
-        {items.map(value=><li key={value.key}>{value.name}</li>)}
+        {items.map(value=><ToDoItem 
+            key={value.key}
+            name={value.name}
+        />)}
         </ul>
     </div>)
 };
