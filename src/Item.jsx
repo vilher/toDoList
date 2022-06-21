@@ -5,13 +5,12 @@ function Item() {
 
 
     const [item, changeItem] = React.useState({
-        name: "",
-        key: 0
+        name: ""
     });
     const [items, addItems] = React.useState([]);
 
     function handleSubmit(event) {
-        changeItem({ name: event.target.value, key: item.key })
+        changeItem({ name: event.target.value})
     }
 
     function addItem(event) {
@@ -19,22 +18,24 @@ function Item() {
         addItems(prev=>{
             return[...prev,item];
         });
-        changeItem({ name: "", key: item.key + 1 })
+        changeItem({ name: ""})
        
 
         event.preventDefault();
     }
+
     return (<div className='form'>
         <form onSubmit={addItem}>
             <input type="text" onChange={handleSubmit} value={item.name} id="name"></input>
             <button type="submit" >Add</button>
-        </form>
+       
         <ul>
-        {items.map(value=><ToDoItem 
-            key={value.key}
-            name={value.name}
-        />)}
+        {items.map((value,index)=><ToDoItem
+         key={index}
+         name={value.name} />
+      )}
         </ul>
+        </form>
     </div>)
 };
 export default Item;
