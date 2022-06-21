@@ -23,7 +23,16 @@ function Item() {
 
         event.preventDefault();
     }
-
+    function deleteItem(event){
+     
+       addItems(prev=>{
+        return prev.filter(
+            (item,index)=>{
+                return index!==event.target.id
+            }
+        )
+       })
+     }
     return (<div className='form'>
         <form onSubmit={addItem}>
             <input type="text" onChange={handleSubmit} value={item.name} id="name"></input>
@@ -31,8 +40,11 @@ function Item() {
        
         <ul>
         {items.map((value,index)=><ToDoItem
-         key={index}
-         name={value.name} />
+         name={value.name} 
+        onClick={deleteItem}
+        key={index}
+        id={index}
+         />
       )}
         </ul>
         </form>

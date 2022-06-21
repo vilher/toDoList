@@ -5,7 +5,9 @@ function ToDoItem(props){
 
 
     return (
-        <li key={props.index} >{props.name}</li>
+        <div onClick={props.onClick}>
+     <li key={props.id} id={props.id} >{props.name}</li>
+        </div>
     );}
 
 
