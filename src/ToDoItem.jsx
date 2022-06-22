@@ -11,11 +11,9 @@ function ToDoItem(props){
         })
        
     }
-
-    console.log(props.id);
     return (
         <li style={{ textDecoration: style ? "line-through": "none" }} key={props.id} onClick={crossItem}>{props.name} </li>
-    );}
+        );}
 
 
 export default ToDoItem;

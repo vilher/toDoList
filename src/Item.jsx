@@ -1,40 +1,20 @@
 import React from 'react';
-import ToDoItem from './ToDoItem';
 
-function Item() {
+function Item(props) {
 
-
-    const [item, changeItem] = React.useState({
-        name: "",
-        key: 0
-    });
-    const [items, addItems] = React.useState([]);
+    const [item, changeItem] = React.useState("");
 
     function handleSubmit(event) {
-        changeItem({ name: event.target.value, key: item.key })
+        changeItem(event.target.value);
     }
 
-    function addItem(event) {
-
-        addItems(prev=>{
-            return[...prev,item];
-        });
-        changeItem({ name: "", key: item.key + 1 })
-       
-
-        event.preventDefault();
-    }
     return (<div className='form'>
-        <form onSubmit={addItem}>
-            <input type="text" onChange={handleSubmit} value={item.name} id="name"></input>
-            <button type="submit" >Add</button>
-        </form>
-        <ul>
-        {items.map(value=><ToDoItem 
-            key={value.key}
-            name={value.name}
-        />)}
-        </ul>
+        <input type="text" onChange={handleSubmit} value={item} id="name"></input>
+        <button onClick={(prev) => {
+            props.addItems(item);
+            changeItem("");
+        }
+        }>Add</button>
     </div>)
 };
 export default Item;
