@@ -9,10 +9,13 @@ html {
 body {
   background: #eee;
   padding: 0 16px;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
 }
 
 header {
   background-color: #f5ba13;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  ;
   margin: auto -16px;
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
@@ -22,6 +25,7 @@ header h1 {
   color: #fff;
   font-family: "McLaren", cursive;
   font-weight: 200;
+  
 }
 
 footer {
@@ -53,18 +57,6 @@ footer p {
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
-}
-
-.note button {
-  position: relative;
-  float: right;
-  margin-right: 10px;
-  color: #f5ba13;
-  border: none;
-  width: 36px;
-  height: 36px;
-  cursor: pointer;
-  outline: none;
 }
 
 form.create-note {
@@ -100,4 +92,14 @@ form.create-note button {
   cursor: pointer;
   outline: none;
 }
-  
+  .note button {
+  position: relative;
+  float: right;
+  margin-right: 10px;
+  color: #f5ba13;
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+}

@@ -15,9 +15,11 @@ function App(){
     };
 
     function deleteNote(event){
+
+        console.log("delete: "+event);
         setNotes((prev)=>{
             return notes.filter((note,index)=>{
-                return index.toString()!==event;
+                return index!==event;
             });
         })
    
