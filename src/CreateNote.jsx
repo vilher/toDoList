@@ -27,7 +27,7 @@ function CreateNote(props) {
    }
     return (
 <form className='create-note'>
-           {isExpended&&<input onChange={changeInput} name="title" placeholder='Title' value={note.title}/>}
+           {isExpended &&<input onChange={changeInput} name="title" placeholder='Title' value={note.title}/>}
             <textarea onClick={expend} onChange={changeInput} name="content" placeholder="Take a text..." value={note.content} rows={isExpended?"3":"1"}></textarea>
             <button onClick={saveNote}><AddIcon /></button>
            

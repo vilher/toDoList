@@ -4,7 +4,7 @@ import CreateNote from './CreateNote';
 
 function App(){
 
-    const[notes,setNotes]=React.useState([{title: 'cd', content: 'b n'},{title: 'vhbjh', content: 'hjbkhlijo'}]);
+    const[notes,setNotes]=React.useState([]);
     
     function saveNote(event){
         setNotes((prev)=>{
@@ -15,8 +15,6 @@ function App(){
     };
 
     function deleteNote(event){
-
-        console.log("delete: "+event);
         setNotes((prev)=>{
             return notes.filter((note,index)=>{
                 return index!==event;
